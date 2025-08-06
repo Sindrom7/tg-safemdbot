@@ -51,7 +51,7 @@ async def warn(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     count = len(warns[user_id])
     await update.message.reply_text(f'⚠️ Avertisment #{count} pentru {update.message.reply_to_message.from_user.mention_html()}')
-Motiv: {reason}", parse_mode="HTML")
+await update.message.reply_text(f"Motiv: {reason}", parse_mode="HTML")
 
     if count >= 3:
         await update.message.reply_text(f"{update.message.reply_to_message.from_user.mention_html()} a primit 3 avertismente și va fi banat.", parse_mode="HTML")
